@@ -1,0 +1,1144 @@
+/*
+  Foundation for Sites components:
+  Import the building blocks you need for your project.
+  Reducing the number of imported components will optimize page speed.
+  ---------------------------------------------------------------------
+  The Foundation framework is built by Zurb
+  Licensed under MIT Open Source
+*/
+
+//  Settings
+@import "global/settings"; // Foundation settings file.
+
+// Foundation mixins & browser resets
+@import '../components/foundation-sites/scss/foundation';
+
+// WP overrides
+@import "global/wp-admin"; // Fix issues with wp-admin bar positioning
+@import "global/wp-overrides"; // Override the default WordPress styling for some elements
+
+// Third-party libraries
+@import 'font-awesome';
+@import 'motion-ui';
+
+// Foundation global styles
+@include foundation-global-styles;
+
+// Individual foundation components
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-progress-element;
+@include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-menu-icon;
+// @include foundation-flex-classes;
+
+// Motion UI
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+/*
+  My custom styles:
+  Add your scss files below to structure your project styles
+*/
+
+// Modules
+@import "modules/navigation";
+@import "modules/footer";
+@import "modules/sidebar";
+
+// Components
+@import "components/buttons";
+@import "components/featured-image";
+@import "components/dividers";
+@import "components/links";
+
+// Templates
+@import "templates/front";
+@import "templates/kitchen-sink";
+@import "templates/page-default";
+@import "templates/page-sidebar-left";
+@import "templates/page-full-width";
+@import "templates/single-post";
+
+// FONT
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+
+/* HEADER */
+body {
+  font-family: Raleway, sans-serif;
+}
+.button-all {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  color: #000;
+  font-weight: 700;
+  /*border: 1px solid #000;*/
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  &:hover {
+    /*background: #000;
+    color: #FFF;*/
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+}
+.breadcrumb {
+  margin-top:10px;
+}
+
+/****** PAGE ******/
+h1 {
+  margin-top:25px;
+  font-family: Raleway, sans-serif;
+  font-size: 30px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  transition: 0.25s ease-out;
+}
+h2 {
+  margin-top:50px;
+  font-family: Raleway, sans-serif;
+  font-size: 25px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  a {
+    color:#000;
+    -webkit-appearance: none;
+    transition: 0.25s ease-out;
+  }
+}
+.byline.author a.fn {
+  color:#ecac91;
+}
+
+// FORMULAIRE
+div.wpcf7 {
+  width:50%;
+  margin:0 auto;
+}
+
+div.wpcf7 input[type="submit"] {
+    background: #373737;
+    text-transform: uppercase;
+    font-weight: 700;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    width: 100%;
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0.85em 1em;
+    margin: 0 0 1rem 0;
+    color: #fff;
+    &:hover {
+      background: none;
+      color: #373737;
+      border: 1px solid #000;
+    }
+}
+
+
+/* INDEX */
+header #menu-top {
+  background: #e7e7e7;
+}
+header #menu-top ul {
+  background-color: #e7e7e7;
+}
+header #menu-top ul li {
+  border: none;
+}
+header #menu-top ul a {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 300;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  &:hover {
+    text-decoration: underline;
+    background: none;
+    color:#000!important;
+  }
+  &:active {
+    color:#FFF;
+    &:hover {
+      color:#000;
+    }
+  }
+}
+header .menu .active > a {
+    color:#FFF!important;
+    background:#373737;
+}
+@media screen and (max-width: 480px) {
+  header #menu-top {
+    display: none;
+  }
+}
+
+header #logo {
+  padding: 20px;
+}
+
+/* BAR MILIEU */
+ header nav {
+
+ }
+header .top-bar {
+  background-color: #373737;
+}
+header .top-bar ul {
+  background-color: #373737;
+}
+header .top-bar ul a {
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+header .top-bar #champ-search input {
+  background: none;
+  color: #FFF;
+  border: none;
+  text-transform: uppercase;
+  &:hover {
+    border:none;
+  }
+}
+
+header .top-bar #searchform button {
+  line-height: 20px;
+  color:#FFF;
+  border: none;
+  border-right: none;
+}
+
+header .top-bar #searchform input[type="text"]{
+    background: none;
+    color: #FFF;
+    border: none;
+    text-transform: uppercase;
+    line-height: 28px;
+    height: auto;
+    &:focus {
+      box-shadow: 0 0 0 0;
+    }
+}
+
+header .top-bar #searchform .input-group {
+  margin-bottom:0px;
+}
+
+header .top-bar .menu li:not(:last-child) {
+  border:none;
+}
+header .title-bar {
+  background: #373737;
+}
+header .menu-icon {
+  width:20px;
+}
+@media (max-width: 480px) {
+header #site-navigation {
+  display:block;
+}
+}
+/* NOUVEAUTES */
+
+#news h2 a {
+  margin-top:50px;
+  font-family: Raleway, sans-serif;
+  font-size: 25px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  &:hover {
+    -webkit-appearance: none;
+    transition: 0.25s ease-out;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px;
+  }
+}
+
+
+#news h5 {
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#news p a {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #000;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+#news .button {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  color: #000;
+  font-weight: 700;
+  background: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  width:50%;
+  -webkit-appearance: none;
+  transition: 0.50s ease-out;
+  &:hover {
+  border-bottom: 4px solid #000;
+  padding-bottom: 5px;
+  }
+}
+#news i {
+  padding-left: 10px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+#news a.thumbnail:hover {
+    box-shadow: 0 0 6px 1px rgba(236, 172, 145, 0.5);
+}
+/* MARQUES */
+#marques {
+}
+
+// FIGCAPTION
+#marques figcaption {
+  width: 400px;
+  background-color: #FFF;
+  font-size: 14px;
+  padding: 20px;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+#marques figcaption h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+#marques figcaption p {
+  font-size: 13px;
+  line-height: 16px;
+}
+#marques figcaption .button {
+  background: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  &:hover {
+    background: none;
+    color:#000;
+    border: 1px solid #000;
+    i {
+      color:#000;
+      -webkit-appearance: none;
+      transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    }
+  }
+}
+#marques figcaption .button i {
+  color: #FFF;
+  font-size: 16px;
+  padding-left: 10px;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+}
+// FIN FIG
+
+/* MEILLEURS VENTES */
+#bestsel {
+  position:relative;
+}
+#bestsel h2 a {
+  margin-top:50px;
+  font-family: Raleway, sans-serif;
+  font-size: 25px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  &:hover {
+    -webkit-appearance: none;
+    transition: 0.25s ease-out;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px;
+  }
+}
+
+
+#bestsel h5 {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#bestsel p {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #000;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+#bestsel .button {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 700;
+  background-color: #ecac91;
+  text-transform: uppercase;
+}
+#bestsel .button i {
+  padding-left:10px;
+  font-size: 15px;
+}
+
+#bestsel a.thumbnail:hover {
+    box-shadow: 0 0 6px 1px rgba(236, 172, 145, 0.5);
+}
+
+// BTN HOvER
+#bestsel .meilleurs-ventes {
+  position: relative;
+  -webkit-appearance: none;
+  transition: 1s ease-out;
+  &:hover {
+    a.button {
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 22%;
+      background: rgba(236, 172, 145, 0.8);
+    }
+    hr {
+      width: 50%;
+      border: 5px solid #ecac91;
+    }
+  }
+}
+#bestsel .meilleurs-ventes hr {
+  width: 50%;
+  border:5px solid #FFF;
+  margin: 2px auto;
+  -webkit-appearance: none;
+  transition: 1s ease-out;
+}
+
+#bestsel .meilleurs-ventes a.button {
+  display: none;
+}
+
+/* BLOG */
+
+#blog h2 a {
+  margin-top:50px;
+  font-family: Raleway, sans-serif;
+  font-size: 25px;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor:pointer;
+  &:hover {
+    -webkit-appearance: none;
+    transition: 0.25s ease-out;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px;
+  }
+}
+#blog .thumbnail {
+  &:hover {
+    box-shadow:none;
+  }
+}
+
+/************ FOOTER *****************/
+
+/* NEWSLETTER */
+#newsletter {
+   background-color: #e7e7e7;
+   padding: 25px;
+}
+#newsletter h4 {
+   font-size: 18px;
+   height: 80%;
+}
+#newsletter h4 span {
+   font-weight: 600;
+}
+#newsletter input[type='email'] {
+  width: 75%;
+  float: left;
+  height: 41px;
+  box-shadow: none;
+  border: none;
+}
+#newsletter .button {
+  background-color: #ecac91;
+  width: 25%;
+  text-transform :uppercase;
+  height: 41px;
+  font-weight: 700;
+  color:#FFF;
+
+
+}
+
+
+/* REASSURANCE*/
+
+#reassurance {
+  background-color: #373737;
+  padding: 25px;
+}
+
+#reassurance p  {
+color: #FFF;
+font-weight: 700;
+font-size: 18px;
+text-transform: uppercase;
+line-height: 20px;
+}
+#reassurance p span {
+font-weight: 400;
+}
+#reassurance i {
+font-size: 32px;
+color: #FFF;
+}
+
+// BLOG
+#blog h4 {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+#blog p {
+  font-size: 12px;
+}
+#blog a {
+  font-size: 12px;
+}
+#blog img {
+  width:100%;
+  height:200px;
+  overflow: hidden;
+}
+#blog .button {
+  color:#000;
+  background: none;
+  -webkit-appearance: none;
+  transition: 1s ease-out;
+  &:hover {
+  border-bottom: 1px solid #000;
+  }
+}
+#blog i {
+  padding-left: 10px;
+}
+
+// *** SIDEBAR  *** //
+aside {
+  width: 100%!important;
+  background: #e7e7e7;
+  height:1300px;
+  article h6 {
+    text-transform: uppercase;
+    font-weight:600;
+    font-size:16px;
+    padding-top: 15px;
+  }
+  form {
+    padding-bottom:50px;
+    padding-top:20px;
+  }
+  .woocommerce_layered_nav-4 {
+  }
+  li > a {
+    color:#000;
+  &:hover{
+      text-decoration: underline;
+      -webkit-appearance: none;
+      transition: 0.25s ease-out;
+      color:#000;
+    }
+  }
+}
+.woocommerce .widget_layered_nav ul li.chosen a:before, .woocommerce .widget_layered_nav_filters ul li a:before {
+  font-family: "FontAwesome";
+  content:"/f00d";
+}
+
+
+/// FIN ASIDE- SIDEBAR
+
+aside #woocommerce_product_search-2 { // Recherche produit
+  label {
+    display:none;
+  }
+
+  input[type='submit'] {
+    width:25%;
+    background: #373737;
+    border:none;
+    color: #FFF;
+    padding: 0.5rem;
+    float:left;
+    border:1px solid transparent;
+  }
+  input[type='search'] {
+    width:73%;
+    display: inline-block;
+    float:left;
+    border:none;
+  }
+}
+aside #woocommerce_product_categories-2 { //Filtrer par cat
+  select {
+    border:1px solid transparent;
+  }
+
+}
+
+aside #woocommerce_price_filter-2 { // Filtrer par prix
+  form {
+    padding-bottom:15px;
+  }
+  .price_slider_amount .button {
+    background:#FFF;
+    border-radius:0px;
+    border:1px solid #e7e7e7;
+  }
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle { // PRIX
+    background-color: #373737;
+  }
+.woocommerce .widget_price_filter .ui-slider-horizontal .ui-slider-range { // PRIX
+  background-color: #373737;
+}
+
+aside #woocommerce_product_tag_cloud-2 { // Etiquette
+  .tagcloud a {
+    font-size: 12px!important;
+    color:#373737;
+  &:after {
+    content: ",";
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+  }
+
+}
+
+// PAGE - PRODUIT
+
+/* PRIX + DESCRIPTION */
+.woocommerce div.product p.price { // PRIX
+  color: #ecac91;
+  font-size: 30px;
+  font-weight:600;
+}
+.woocommerce div.product form.cart .button { // BTN-ADD
+  background-color:#ecac91;
+  color:#FFF;
+  font-size: 25px;
+  font-weight:600;
+  border-radius:0px;
+  border:1px solid transparent;
+  text-transform:uppercase;
+  -webkit-appearance: none;
+  transition: 0.25s ease-out;
+  &:hover {
+    border:1px solid #ecac91;
+    color:#ecac91;
+    background:none;
+  }
+}
+
+// PHOTO
+.woocommerce div.product div.images img {
+  width:auto;
+  border:1px solid #e7e7e7;
+}
+
+/* DESCRIPTION - ETC */
+.woocommerce .wc-tabs-wrapper {
+}
+.woocommerce .wc-tabs-wrapper h2 {
+  display:none;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  background-color: none;
+  text-align: center;
+  border:none;
+  &:before {
+    border-bottom: none;
+  }
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  background: none;
+  padding: 0 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight:200;
+  color: #000;
+  border: none;
+  border-raduis: none;
+  border-top: 2px solid #fff;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  &:hover {
+    border-top: 2px solid #cf9b7e;
+    color: #cf9b7e;
+  }
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li:active {
+  background: none;
+  border-top: 2px solid #cf9b7e;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  background: none;
+  font-size: 20px;
+  font-weight:200;
+  color: #000;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  &:hover {
+    color: #cf9b7e;
+    font-weight: 700;
+  }
+}
+
+/* PRODUIT APPARENTES */
+
+// Produit Associés
+
+div.related.products {
+  h2 {
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight:500;
+    padding-bottom:20px;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  }
+  .product {
+    position:relative;
+  }
+}
+.woocommerce .related .products {
+  background-color: none;
+}
+
+.woocommerce ul.products {
+  text-align: center;
+}
+.woocommerce ul.products h3 {
+  border-top:none!important;
+}
+.woocommerce ul.products h3 {
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0px;
+  text-align: center;
+  border:none;
+}
+.woocommerce ul.products span.price {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #000;
+  font-weight: 200;
+  text-transform: uppercase;
+  display:block;
+}
+.woocommerce ul.products a.button {
+  display:none;
+}
+
+.hr-product {
+  width: 50%;
+  border: 5px solid #FFF;
+  margin: 2px auto;
+  -webkit-appearance: none;
+  transition: 1s ease-out;
+}
+div.product-list {
+  position:relative;
+}
+div.related.products ul.products div.product-list:hover {
+  a.button {
+    display: block;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    color: #FFF;
+    font-weight: 700;
+    background: rgba(236, 172, 145, 0.8);
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0.85em 1em;
+    margin: 0 0 1rem 0;
+    position:absolute;
+    top:32%;
+    left:29%;
+  }
+  .hr-product {
+    border: 5px solid #ecac91;
+    }
+}
+  .woocommerce ul.products h3 {
+    border-top: 5px solid #ecac91;
+  }
+
+
+
+/* PAGE LINSTING*/
+h1.page-title {
+  text-align:center;
+}
+div.product-list {
+  padding-bottom:20px;
+}
+ul.products div.product-list:hover {
+  a.button {
+    display: block;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    color: #FFF;
+    font-weight: 700;
+    background: rgba(236, 172, 145, 0.8);
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0.85em 1em;
+    margin: 0 0 1rem 0;
+    position:absolute;
+    top:27%;
+    left:22%;
+  }
+  .hr-product {
+    border: 5px solid #ecac91;
+    }
+}
+
+
+
+/* FOOTER */
+#footer-container {
+  margin-top:0px;
+}
+#footer #footer-menu h5 {
+  text-transform: uppercase;
+  font-size:16px;
+}
+#footer #footer-menu ul li a {
+  color:#000;
+  font-size:13px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+#footer #footer-menu #reseau li {
+  line-height: 30px;
+}
+#footer #footer-menu #reseau i {
+  margin-right: 10px;
+  border: 1px solid #000;
+  font-size: 18px;
+  height: 30px;
+  width:30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+/****** PAGE - PANIER ******/
+div.entry-content .woocommerce {
+  p.cart-empty {
+    text-align:center;
+  }
+  p.return-to-shop {
+    text-align:center;
+    a.button.wc-backward {
+      background: none;
+      color:#373737;
+      border: 1px solid #373737;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius:0px;
+      padding:15px;
+      -webkit-appearance: none;
+      transition: background-color 0.25s ease-out, color 0.25s ease-out;
+      &:hover {
+        background: #373737;
+        color:#fff;
+      }
+    }
+  }
+}
+
+
+/****** PAGE - CAT MARQUE ******/
+
+.page-marque {
+  margin-bottom:15px;
+  h3 a {
+    color: #000;
+     background:none;
+     font-size:20px;
+     font-weight:600;
+     text-transform: uppercase;
+     padding-top: 10px;
+     &:hover {
+      color: #000;
+      -webkit-appearance: none;
+      transition: 0.25s ease-out;
+      border-bottom: 3px solid #000;
+      padding-bottom: 3px;
+     }
+     mark {
+       background: none;
+       font-size:15px;
+       font-weight:400;
+     }
+   }
+   img {
+     margin-bottom: 5px;
+    margin-top: 10px;
+   }
+
+}
+
+
+/* PAGE COMPTE */
+// DECO
+
+.entry-content .woocommerce form .form-row {
+  background:none;
+  label {
+    display: block;
+  }
+}
+
+// CONNECTE
+.entry-content {
+  h2 {
+    text-transform: uppercase;
+    font-size:25px;
+    text-align:center;
+    font-weight:500;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-size:20px;
+    text-align:center;
+    font-weight:500;
+  }
+  .woocommerce input.button{
+    display: block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0.85em 1em;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    background-color: #373737;
+    color: #fff;
+    text-transform: uppercase;
+    margin:0 auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  a {
+    color:#000;
+    font-weight:600;
+    -webkit-appearance: none;
+    transition: 0.50s ease-out;
+    &:hover {
+        text-decoration: underline;
+    }
+  }
+}
+// RECAPITULATIF - COMMANDE
+
+.order-actions .button.view {
+  background:none;
+  border-radius:0px;
+  border:1px solid #373737;
+  -webkit-appearance: none;
+  transition: 0.50s ease-out;
+  &:hover {
+    background:#373737;
+    color:#fff;
+  }
+}
+// COMMANDE :
+
+.order-info mark {
+  color:#ecac91;
+  font-weight:600;
+  background:none;
+}
+
+// PANIER //
+// Remove
+.woocommerce a.remove{
+  color:#000!important;
+  &:hover {
+    background:none;
+    color:#000!important;
+  }
+}
+
+/*coupon_code*/
+.coupon input.button { // modif un des boutons
+
+}
+.entry-content .woocommerce input.button { // Modifi les deux BTN
+  background:none;
+  margin-top:0px;
+  border:1px solid #373737;
+  color:#373737;
+  display:inline-block;
+  -webkit-appearance: none;
+  transition: 0.50s ease-out;
+  &:hover{
+    background:#373737;
+    color:#FFF;
+  }
+
+}
+.woocommerce-cart table.cart td.actions .coupon {
+  display:inline-block;
+  width:50%;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+  width: 58%;
+}
+
+/* BTN - passer la commmande : */
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+  background:none;
+  border-radius:0px;
+  border:2px solid #ecac91;
+  color:#ecac91;
+  text-transform:uppercase;
+  -webkit-appearance: none;
+  transition: 0.50s ease-out;
+  &:hover {
+    background:#ecac91;
+    color:#FFF;
+  }
+}
+
+/* Recapitulatif commande */
+#ship-to-different-address label {
+  display:inline-block;
+
+}
+
+.woocommerce .woocommerce-message {
+  border-top-color:#ecac91;
+}
+.woocommerce .woocommerce-message:before {
+  color:#ecac91;
+}
+
+.woocommerce .woocommerce-message a {
+  border:1px solid #373737;
+  color:#373737;
+  background:none;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  transition: 0.50s ease-out;
+  &:hover {
+    background:#373737;
+    color:#fff;
+  }
+
+}
